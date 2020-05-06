@@ -1,0 +1,21 @@
+## in terminal
+
+xcode-select --install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew install openssl
+brew cask install powershell
+brew install https://github.com/luckman212/openssl10/releases/download/1.0.2u/openssl@1.0.rb
+sudo rm -rf /usr/local/opt/openssl
+ln -s /usr/local/Cellar/openssl@1.0/1.0.2u /usr/local/opt/openssl
+
+## in powershell (write pwsh in terminal)
+Install-Module -Name AzureAD
+Install-Module MSOnline
+Install-Module -Name MicrosoftTeams -RequiredVersion 1.0.2
+Install-Module -Name Microsoft.Online.SharePoint.PowerShell
+
+
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/powershell-liveid/ -Credential $UserCredential -Authentication Basic -AllowRedirection
+Import-PSSession $Session -DisableNameChecking
+
+## enjoy
